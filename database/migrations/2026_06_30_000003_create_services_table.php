@@ -10,11 +10,9 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-
             $table->foreignId('department_id')
                 ->constrained()
                 ->cascadeOnDelete();
-
             $table->string('service_name',150);
             $table->string('prefix',5);
             $table->integer('estimated_time')->nullable();
